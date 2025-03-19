@@ -2,6 +2,7 @@ import pizzaImage from "../assets/pizza.jpg";
 
 const mockBusinessData = [
   {
+    id: 121,
     imageSrc: pizzaImage,
     name: "MarginOtto Pizzeria",
     address: "1010 Paddington Way",
@@ -13,6 +14,7 @@ const mockBusinessData = [
     reviewCount: 90,
   },
   {
+    id: 122,
     imageSrc: pizzaImage,
     name: "Bella Roma",
     address: "2020 Market St",
@@ -24,6 +26,7 @@ const mockBusinessData = [
     reviewCount: 120,
   },
   {
+    id: 123,
     imageSrc: pizzaImage,
     name: "Luigi's Trattoria",
     address: "1500 King St",
@@ -35,6 +38,7 @@ const mockBusinessData = [
     reviewCount: 110,
   },
   {
+    id: 124,
     imageSrc: pizzaImage,
     name: "Vesuvio's",
     address: "2345 Oak Ave",
@@ -46,6 +50,7 @@ const mockBusinessData = [
     reviewCount: 150,
   },
   {
+    id: 125,
     imageSrc: pizzaImage,
     name: "Roma Pizza",
     address: "789 Sunset Blvd",
@@ -57,6 +62,7 @@ const mockBusinessData = [
     reviewCount: 80,
   },
   {
+    id: 126,
     imageSrc: pizzaImage,
     name: "Pasta & Co.",
     address: "333 Pine St",
@@ -68,6 +74,7 @@ const mockBusinessData = [
     reviewCount: 200,
   },
   {
+    id: 127,
     imageSrc: pizzaImage,
     name: "Café Napolitano",
     address: "501 West Ave",
@@ -79,6 +86,7 @@ const mockBusinessData = [
     reviewCount: 130,
   },
   {
+    id: 128,
     imageSrc: pizzaImage,
     name: "Trattoria Da Vinci",
     address: "1122 Elm St",
@@ -90,6 +98,7 @@ const mockBusinessData = [
     reviewCount: 180,
   },
   {
+    id: 129,
     imageSrc: pizzaImage,
     name: "The Pizza Spot",
     address: "400 Maple Rd",

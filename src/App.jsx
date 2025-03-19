@@ -1,7 +1,9 @@
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { makeStyles } from "@mui/styles";
-import SearchBar from "./component/SearchBar";
+import SearchBar from "./components/SearchBar";
+import Business from "./containers/Business";
+import mockBusinessData from "./data/mockBusinessData";
 
 const useStyles = makeStyles({
   headerBackground: {
@@ -39,6 +41,7 @@ function App() {
         ravenous
       </Typography>
       <SearchBar />
+      <Business businesses={mockBusinessData} />
     </Container>
   );
 }
