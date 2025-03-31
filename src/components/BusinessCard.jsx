@@ -11,23 +11,18 @@ import {
 export default function BusinessCard({ business }) {
   return (
     <Card
-      sx={{ width: "16.66rem" }}
+      sx={{ width: "20rem" }}
       lg={{ maxWidth: 345, boxShadow: 3, borderRadius: 2 }}
     >
       <CardActionArea>
         <CardMedia
           component="img"
-          sx={{ height: "16.66rem" }}
-          image={business.imageSrc}
+          sx={{ height: "20.66rem" }}
+          image={business.image_url}
           alt={business.name}
         />
         <CardContent>
-          <Typography
-            gutterBottom
-            variant="h5"
-            component="h3"
-            sx={{ fontWeight: "bold" }}
-          >
+          <Typography variant="h6" component="h6" sx={{ fontWeight: "bold" }}>
             {business.name}
           </Typography>
           <Box sx={{ display: "flex", flexDirection: "column" }}>
@@ -45,7 +40,7 @@ export default function BusinessCard({ business }) {
               <Typography
                 variant="body2"
                 color="textPrimary"
-                sx={{ fontWeight: "bold", color: "#cca353" }}
+                sx={{ fontWeight: "bold", color: "#cca353", fontSize: 14 }}
               >
                 {business.category.toUpperCase()}
               </Typography>
@@ -77,10 +72,10 @@ export default function BusinessCard({ business }) {
               }}
             >
               <Typography variant="body2" color="textPrimary">
-                {business.state} {business.zipCode}
+                {business.state} {business.zip_code}
               </Typography>
               <Typography variant="body2" color="textPrimary">
-                {business.reviewCount} reviews
+                {business.review_count} reviews
               </Typography>
             </Box>
           </Box>

@@ -1,5 +1,5 @@
-import React from "react";
-import { Box, TextField, Button } from "@mui/material";
+import React, { useState } from "react";
+import { Box, TextField, Button, Typography } from "@mui/material";
 import backgroundImage from "../assets/background_search_desktop.jpg";
 import backgroundImageMobile from "../assets/background_search_mobile.jpg";
 
@@ -9,7 +9,31 @@ const sortByOptions = {
   "Most Reviewed": "review_count",
 };
 
-function SearchBar() {
+function SearchBar({
+  location,
+  term,
+  sort_by,
+  setSort_by,
+  handleChange,
+  handleSubmit,
+}) {
+  const [searchError, setSearchError] = useState(false);
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+
+    const isTermEmpty = term.trim().length === 0;
+    const isLocationEmpty = location.trim().length === 0;
+
+    if (isTermEmpty || isLocationEmpty) {
+      setSearchError(true);
+      return;
+    }
+
+    setSearchError(false);
+    handleSubmit();
+  };
+
   const renderSortByOptions = () => {
     return Object.keys(sortByOptions).map((sortByOption) => {
       let sortByOptionValue = sortByOptions[sortByOption];
@@ -17,17 +41,24 @@ function SearchBar() {
         <Button
           variant="text"
           sx={{
-            color: "white",
+            color: sort_by === sortByOptionValue ? "#cca353" : "white",
+            fontWeight: sort_by === sortByOptionValue ? "bold" : "normal",
             textTransform: "none",
             fontSize: { xs: "0.875rem", sm: "1rem" },
             width: { xs: "100%", sm: "auto" },
           }}
           key={sortByOptionValue}
+          onClick={() => handleClick(sortByOptionValue)}
         >
           {sortByOption}
         </Button>
       );
     });
+  };
+
+  const handleClick = (value) => {
+    setSort_by(value);
+    console.log("Clicked Button Value:", value);
   };
 
   return (
@@ -63,7 +94,7 @@ function SearchBar() {
         {renderSortByOptions()}
       </Box>
 
-      <form noValidate autoComplete="off">
+      <form noValidate autoComplete="off" onSubmit={onSubmit}>
         <Box
           sx={{
             display: "flex",
@@ -82,16 +113,28 @@ function SearchBar() {
               backgroundColor: "white",
               borderRadius: 1,
               width: { xs: "100%", sm: 250 },
+              color: "#cca353",
+              "& .MuiInputLabel-root": { color: "#cca353" },
             }}
+            type="text"
+            name="term"
+            value={term}
+            onChange={handleChange}
           />
           <TextField
-            label="Where?"
+            label="Location"
             variant="outlined"
             sx={{
               backgroundColor: "white",
               borderRadius: 1,
               width: { xs: "100%", sm: 250 },
+              color: "#cca353",
+              "& .MuiInputLabel-root": { color: "#cca353" },
             }}
+            type="text"
+            name="location"
+            value={location}
+            onChange={handleChange}
           />
         </Box>
         <Box
@@ -116,6 +159,19 @@ function SearchBar() {
           </Button>
         </Box>
       </form>
+      {searchError && (
+        <Typography
+          color="white"
+          sx={{
+            fontWeight: "bold",
+            fontSize: "1.2rem",
+            textAlign: "center",
+            marginTop: 2,
+          }}
+        >
+          Please provide all required fields
+        </Typography>
+      )}
     </Box>
   );
 }
