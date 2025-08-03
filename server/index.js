@@ -1,15 +1,15 @@
+/* eslint-disable no-undef */
 require("dotenv").config();
 const express = require("express");
-var cors = require("cors");
+const cors = require("cors");
+const yelpRouter = require("./routes/yelp");
 
 const app = express();
 
 app.use(cors());
 
-const PORT = process.env.PORT || 4000;
+app.use("/api/yelp", yelpRouter);
 
-app.get("/", (req, res) => {
-  res.json({ message: "Hello yelpAPI" });
-});
+const PORT = process.env.PORT || 4000;
 
 app.listen(PORT, () => console.log(`Listening on PORT ${PORT}`));

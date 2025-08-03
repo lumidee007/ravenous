@@ -1,8 +1,19 @@
 import noImage from "../assets/No-Image-Placeholder.jpg";
+const apiUrl = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000";
 const fetchBusinesses = async (term, location, sort_by) => {
   try {
+    // const response = await fetch(
+    //   `http://localhost:4000/api/yelp?term=${term}&location=${location}&sort_by=${sort_by}`
+    // );
+
+    // const response = await fetch(
+    //   `${
+    //     import.meta.env.VITE_API_BASE_URL
+    //   }/api/yelp?term=${term}&location=${location}&sort_by=${sort_by}`
+    // );
+
     const response = await fetch(
-      `http://localhost:4000/api/yelp?term=${term}&location=${location}&sort_by=${sort_by}`
+      `${apiUrl}/api/yelp?term=${term}&location=${location}&sort_by=${sort_by}`
     );
 
     if (!response.ok) {

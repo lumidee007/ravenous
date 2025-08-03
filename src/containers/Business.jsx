@@ -54,7 +54,7 @@ export default function Business({ businesses, error }) {
       }}
     >
       <Typography variant="h6" color="textSecondary">
-        No Data Found
+        No result found
       </Typography>
     </Box>
   );

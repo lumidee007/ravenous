@@ -9,7 +9,7 @@ const getBusinesses = async (req, res) => {
     location
   )}&term=${encodeURIComponent(term)}&sort_by=${encodeURIComponent(
     sort_by
-  )}&limit=24`;
+  )}&limit=50`;
 
   try {
     const response = await fetch(url, {

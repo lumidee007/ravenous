@@ -49,7 +49,7 @@ function App() {
 
   useEffect(() => {
     loadBusinesses();
-  }, []);
+  }, [sort_by]);
 
   const handleChange = ({ target }) => {
     const { name, value } = target;

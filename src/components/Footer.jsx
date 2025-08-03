@@ -14,7 +14,7 @@ const Footer = () => {
       }}
     >
       <Typography variant="body2">
-        © {new Date().getFullYear()} Femi.
+        © {new Date().getFullYear()} Ravenous by Femi · Powered by Yelp API
       </Typography>
     </Box>
   );

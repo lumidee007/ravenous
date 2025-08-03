@@ -1,12 +1,38 @@
-# React + Vite
+# 🌍 WorldWise React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![img-1](./src/assets/img-1.jpeg)
+![img-2](./src/assets/img-2.jpeg)
+![img-3](./src/assets/img-3.jpeg)
+![img-4](./src/assets/img-4.jpeg)
 
-Currently, two official plugins are available:
+Ravenous is a React-based web application that lets users search for businesses by name and location using the Yelp API. Whether you're looking for a pizza place in New York or a coffee shop in London, Ravenous fetches real-time business listings, user reviews, ratings, and images.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔗 Live Demo
 
-## Expanding the ESLint configuration
+https://react-worldwise-tzde.onrender.com
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📦 Features
+
+- 🔎 Search for businesses by keyword and location
+- 📍 View top-rated business listings from Yelp
+- 🖼️ Displays images, ratings, and review counts
+- 💡 Responsive design for both desktop and mobile views
+- ♻️ Clean component structure using React functional components
+- ⚙️ Backend Express server with environment-based API key protection
+
+## 🚀 Tech Stack
+
+- Frontend: React, Vite, MUI
+- Backend: Node.js, Express
+- API: Yelp Fusion API
+- Styling: CSS Modules, Material UI
+- Development: ESLint, dotenv
+
+## 💻 Using the application on your local system
+
+- Clone the repository : git clone https://github.com/lumidee007/ravenous
+- Change directory: cd ravenous
+- Install dependencies : npm install
+- Create a .env file in the server/ directory: YELP_API_KEY=your_yelp_api_key
+- cd server : npm run dev
+- cd .. : npm run dev
